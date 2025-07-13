@@ -8,7 +8,7 @@ pipeline {
     environment {
         APP_NAME = "personal_finance_tracker_app"
         CONTAINER_NAME = "${APP_NAME}_container"
-        APP_PORT = "5001"
+        APP_PORT = "5010"
         // BUILD_NUMBER is a built-in Jenkins environment variable.
         IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
