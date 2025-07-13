@@ -6,7 +6,7 @@ pipeline {
 
     // Global environment variables for the entire pipeline.
     environment {
-        APP_NAME = "fintrack_app"
+        APP_NAME = "personal_finance_tracker_app"
         CONTAINER_NAME = "${APP_NAME}_container"
         APP_PORT = "5001"
         // BUILD_NUMBER is a built-in Jenkins environment variable.
@@ -25,7 +25,7 @@ pipeline {
         stage('Clone Code') {
             steps {
                 echo 'Cloning source code from Git...'
-                git branch: 'main', url: 'https://github.com/xopsguru/fintracker_project.git'
+                git branch: 'main', url: 'https://github.com/xopsguru/fintracker.git'
             }
         }
 
