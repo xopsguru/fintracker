@@ -1,7 +1,7 @@
 import socket
 import os
 
-APP_VERSION = "1.0.1"
+APP_VERSION = "1.0.5"
 APP_NAME = "Personal Finance Tracker"
 
 def get_system_info():
