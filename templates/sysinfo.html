@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}System Information - FinTrack{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>CPU Usage</h5>
+            </div>
+            <div class="card-body">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{ cpu_percent }}%">
+                        {{ cpu_percent }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Memory Usage</h5>
+            </div>
+            <div class="card-body">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{ memory.percent }}%">
+                        {{ memory.percent }}%
+                    </div>
+                </div>
+                <small class="text-muted">
+                    {{ (memory.used / 1024 / 1024 / 1024)|round(2) }} GB / {{ (memory.total / 1024 / 1024 / 1024)|round(2) }} GB
+                </small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Disk Usage</h5>
+            </div>
+            <div class="card-body">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{ disk.percent }}%">
+                        {{ disk.percent }}%
+                    </div>
+                </div>
+                <small class="text-muted">
+                    {{ (disk.used / 1024 / 1024 / 1024)|round(2) }} GB / {{ (disk.total / 1024 / 1024 / 1024)|round(2) }} GB
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
