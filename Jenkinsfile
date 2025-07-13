@@ -26,7 +26,7 @@ pipeline { // Declarative syntax for Jenkins Pipeline
         stage('Clone Code') { // Stage to clone the source code from Git repository
             steps { //
                 echo 'Cloning source code from Git...' //
-                git branch: 'main', url: 'https://github.com/xopsguru/fintracker.git' //
+                git branch: 'dev', url: 'https://github.com/xopsguru/fintracker.git' //
             }
         }
 
