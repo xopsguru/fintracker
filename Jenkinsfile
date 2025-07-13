@@ -64,6 +64,14 @@ pipeline { // Declarative syntax for Jenkins Pipeline
                 }
             }
         }
+        // --- ADD THIS DEBUG STAGE ---
+        stage('Verify Dockerfile Content') {
+            steps {
+                echo 'Content of Dockerfile in workspace:'
+                sh 'cat Dockerfile' // This will print the Dockerfile content to the console output
+            }
+        }
+        // --- END DEBUG STAGE ---
 
         stage('Build Docker Image') { // Stage to build the Docker image
             steps {
