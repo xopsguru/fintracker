@@ -69,7 +69,7 @@ pipeline { // Declarative syntax for Jenkins Pipeline
             steps {
                 echo "Building Docker image: ${env.APP_NAME}:${env.IMAGE_TAG}"
                 // Ensure Docker daemon is accessible without sudo on agent
-                sh "docker build --no-cache -t ${env.APP_NAME}:${env.IMAGE_TAG} ." // Build the Docker image
+                sh "docker build --no-cache --pull -t ${env.APP_NAME}:${env.IMAGE_TAG} ." // Build the Docker image
             }
         }
 
