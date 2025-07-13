@@ -84,7 +84,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 echo "Running new container: ${env.CONTAINER_NAME} on port ${env.APP_EXT_PORT}"
-                sh "docker run -p ${env.APP_INT_PORT}:${env.APP_EXT_PORT} --name ${env.CONTAINER_NAME} -d ${env.APP_NAME}:${env.IMAGE_TAG}"
+                sh "docker run -p ${env.APP_EXT_PORT}:${env.APP_INT_PORT} --name ${env.CONTAINER_NAME} -d ${env.APP_NAME}:${env.IMAGE_TAG}"
             }
         }
     }
